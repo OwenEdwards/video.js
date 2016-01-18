@@ -108,11 +108,30 @@ class VolumeMenuButton extends MenuButton {
    *
    * @method handleClick
    */
-  handleClick() {
+  handleClick(event) {
     MuteToggle.prototype.handleClick.call(this);
     super.handleClick();
   }
 
+  handleKeyPress(event) {
+    if ((event.which === 32 || event.which === 13) &&
+        (event.target !== this.volumeBar.el())) {
+      this.handleClick(event);
+    }
+  }
+
+  attachVolumeBarEvents() {
+    this.on(['mousedown', 'touchdown'], this.handleMouseDown);
+  }
+
+  handleMouseDown(event) {
+    this.on(['mousemove', 'touchmove'], Fn.bind(this.volumeBar, this.volumeBar.handleMouseMove));
+    this.on(document, ['mouseup', 'touchend'], this.handleMouseUp);
+  }
+
+  handleMouseUp(event) {
+    this.off(['mousemove', 'touchmove'], Fn.bind(this.volumeBar, this.volumeBar.handleMouseMove));
+  }
 }
 
 VolumeMenuButton.prototype.volumeUpdate = MuteToggle.prototype.update;

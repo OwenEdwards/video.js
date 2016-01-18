@@ -47,11 +47,15 @@ class Menu extends Component {
     let contentElType = this.options_.contentElType || 'ul';
     this.contentEl_ = Dom.createEl(contentElType, {
       className: 'vjs-menu-content'
+    }, {
+      role: 'listbox'
     });
     this.contentEl_.setAttribute('role', 'menu');
     var el = super.createEl('div', {
       append: this.contentEl_,
       className: 'vjs-menu'
+    }, {
+      'aria-live': 'off'
     });
     el.setAttribute('role', 'presentation');
     el.appendChild(this.contentEl_);
