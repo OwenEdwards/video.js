@@ -58,6 +58,13 @@ class VolumeMenuButton extends MenuButton {
     updateVisibility.call(this);
     this.on(player, 'loadstart', updateVisibility);
 
+    this.on('focus', function() {
+      this.el_.setAttribute('aria-expanded', 'true');
+    });
+    this.on('blur', function() {
+      this.el_.setAttribute('aria-expanded', 'false');
+    });
+
     this.on(this.volumeBar, ['slideractive', 'focus'], function(){
       this.addClass('vjs-slider-active');
     });
@@ -65,6 +72,12 @@ class VolumeMenuButton extends MenuButton {
     this.on(this.volumeBar, ['sliderinactive', 'blur'], function(){
       this.removeClass('vjs-slider-active');
     });
+
+    //this.on(this.volumeBar, ['keypress'], function(event) {
+      //if (event.which === 27 || event.which === 9) {
+        //this.el().focus();
+      //}
+    //});
   }
 
   /**
