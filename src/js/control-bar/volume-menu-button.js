@@ -58,26 +58,42 @@ class VolumeMenuButton extends MenuButton {
     updateVisibility.call(this);
     this.on(player, 'loadstart', updateVisibility);
 
+    this.toggleMutedLabel();
+
     this.on('focus', function() {
       this.el_.setAttribute('aria-expanded', 'true');
     });
-    this.on('blur', function() {
+
+    let playerEl = player.el();
+    let handleMouseOver = (event) => {
+      if (event.target !== this.el_ && event.target !== this.volumeBar.el_) {
+        this.el_.setAttribute('aria-expanded', 'false');
+      }
+    };
+    playerEl.onfocusin = handleMouseOver;
+    playerEl.addEventListener('focus',handleMouseOver,true);
+    playerEl.onfocusout = handleMouseOut;
+    playerEl.addEventListener('blur',handleMouseOut,true);
+
+    this.on(player, 'focus', Fn.bind(this, function(event) {
+      console.log('playerfocus', event.target);
+    }), true);
+
+    this.on(this.volumeBar, ['slideractive', 'focus'], Fn.bind(this, function(){
+      this.el_.setAttribute('aria-expanded', 'true');
+      this.volumeBar.addClass('vjs-slider-active');
+    }));
+
+    this.on(this.volumeBar, ['sliderinactive', 'blur'], Fn.bind(this, function(){
       this.el_.setAttribute('aria-expanded', 'false');
-    });
+      this.volumeBar.removeClass('vjs-slider-active');
+    }));
 
-    this.on(this.volumeBar, ['slideractive', 'focus'], function(){
-      this.addClass('vjs-slider-active');
-    });
-
-    this.on(this.volumeBar, ['sliderinactive', 'blur'], function(){
-      this.removeClass('vjs-slider-active');
-    });
-
-    //this.on(this.volumeBar, ['keypress'], function(event) {
-      //if (event.which === 27 || event.which === 9) {
-        //this.el().focus();
-      //}
-    //});
+    this.on(this.volumeBar, 'keydown', Fn.bind(this, function(event) {
+      if (event.which === 27) {
+        this.el_.focus();
+      }
+    }));
   }
 
   /**
@@ -123,7 +139,16 @@ class VolumeMenuButton extends MenuButton {
    */
   handleClick(event) {
     MuteToggle.prototype.handleClick.call(this);
+    this.toggleMutedLabel();
     super.handleClick();
+  }
+
+  toggleMutedLabel() {
+    if (this.player_.muted()) {
+      this.el_.setAttribute('aria-label', 'Mute Toggle, Muted');
+    } else {
+      this.el_.setAttribute('aria-label', 'Mute Toggle, Not Muted');
+    }
   }
 
   handleKeyPress(event) {
