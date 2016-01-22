@@ -54,8 +54,6 @@ class Menu extends Component {
     var el = super.createEl('div', {
       append: this.contentEl_,
       className: 'vjs-menu'
-    }, {
-      'aria-live': 'off'
     });
     el.setAttribute('role', 'presentation');
     el.appendChild(this.contentEl_);

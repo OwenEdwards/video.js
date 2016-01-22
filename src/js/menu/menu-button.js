@@ -105,8 +105,6 @@ class MenuButton extends Button {
   createEl() {
     return super.createEl('div', {
       className: this.buildCSSClass()
-    }, {
-      'aria-live': 'off'
     });
   }
 

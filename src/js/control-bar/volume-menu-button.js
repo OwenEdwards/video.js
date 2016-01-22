@@ -72,12 +72,11 @@ class VolumeMenuButton extends MenuButton {
     };
     playerEl.onfocusin = handleMouseOver;
     playerEl.addEventListener('focus',handleMouseOver,true);
-    playerEl.onfocusout = handleMouseOut;
-    playerEl.addEventListener('blur',handleMouseOut,true);
 
-    this.on(player, 'focus', Fn.bind(this, function(event) {
-      console.log('playerfocus', event.target);
-    }), true);
+    this.player.on('dispose', function() {
+      playerEl.onfocusin = null;
+      playerEl.removeEventListener('focus',handleMouseDown, true);
+    });
 
     this.on(this.volumeBar, ['slideractive', 'focus'], Fn.bind(this, function(){
       this.el_.setAttribute('aria-expanded', 'true');
