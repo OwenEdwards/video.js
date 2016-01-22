@@ -76,7 +76,7 @@ class VolumeMenuButton extends MenuButton {
 
     player.on('dispose', function() {
       playerEl.onfocusin = null;
-      playerEl.removeEventListener('focus',handleMouseDown, true);
+      playerEl.removeEventListener('focus',handleMouseOver, true);
     });
 
     this.on(this.volumeBar, ['slideractive', 'focus'], Fn.bind(this, function(){
