@@ -3,6 +3,7 @@
  */
 import Button from '../button.js';
 import Component from '../component.js';
+import * as Fn from '../utils/fn.js';
 import Menu from '../menu/menu.js';
 import MenuButton from '../menu/menu-button.js';
 import MuteToggle from './mute-toggle.js';
@@ -58,13 +59,41 @@ class VolumeMenuButton extends MenuButton {
     updateVisibility.call(this);
     this.on(player, 'loadstart', updateVisibility);
 
-    this.on(this.volumeBar, ['slideractive', 'focus'], function(){
-      this.addClass('vjs-slider-active');
+    this.toggleMutedLabel();
+
+    this.on('focus', function() {
+      this.el_.setAttribute('aria-expanded', 'true');
     });
 
-    this.on(this.volumeBar, ['sliderinactive', 'blur'], function(){
-      this.removeClass('vjs-slider-active');
+    let playerEl = player.el();
+    let handleMouseOver = (event) => {
+      if (event.target !== this.el_ && event.target !== this.volumeBar.el_) {
+        this.el_.setAttribute('aria-expanded', 'false');
+      }
+    };
+    playerEl.onfocusin = handleMouseOver;
+    playerEl.addEventListener('focus',handleMouseOver,true);
+
+    player.on('dispose', function() {
+      playerEl.onfocusin = null;
+      playerEl.removeEventListener('focus',handleMouseOver, true);
     });
+
+    this.on(this.volumeBar, ['slideractive', 'focus'], Fn.bind(this, function(){
+      this.el_.setAttribute('aria-expanded', 'true');
+      this.volumeBar.addClass('vjs-slider-active');
+    }));
+
+    this.on(this.volumeBar, ['sliderinactive', 'blur'], Fn.bind(this, function(){
+      this.el_.setAttribute('aria-expanded', 'false');
+      this.volumeBar.removeClass('vjs-slider-active');
+    }));
+
+    this.on(this.volumeBar, 'keydown', Fn.bind(this, function(event) {
+      if (event.which === 27) {
+        this.el_.focus();
+      }
+    }));
   }
 
   /**
@@ -108,11 +137,39 @@ class VolumeMenuButton extends MenuButton {
    *
    * @method handleClick
    */
-  handleClick() {
+  handleClick(event) {
     MuteToggle.prototype.handleClick.call(this);
+    this.toggleMutedLabel();
     super.handleClick();
   }
 
+  toggleMutedLabel() {
+    if (this.player_.muted()) {
+      this.el_.setAttribute('aria-label', 'Mute Toggle, Muted');
+    } else {
+      this.el_.setAttribute('aria-label', 'Mute Toggle, Not Muted');
+    }
+  }
+
+  handleKeyPress(event) {
+    if ((event.which === 32 || event.which === 13) &&
+        (event.target !== this.volumeBar.el())) {
+      this.handleClick(event);
+    }
+  }
+
+  attachVolumeBarEvents() {
+    this.on(['mousedown', 'touchdown'], this.handleMouseDown);
+  }
+
+  handleMouseDown(event) {
+    this.on(['mousemove', 'touchmove'], Fn.bind(this.volumeBar, this.volumeBar.handleMouseMove));
+    this.on(document, ['mouseup', 'touchend'], this.handleMouseUp);
+  }
+
+  handleMouseUp(event) {
+    this.off(['mousemove', 'touchmove'], Fn.bind(this.volumeBar, this.volumeBar.handleMouseMove));
+  }
 }
 
 VolumeMenuButton.prototype.volumeUpdate = MuteToggle.prototype.update;

@@ -205,7 +205,9 @@ class MenuButton extends Button {
     this.buttonPressed_ = true;
     this.menu.lockShowing();
     this.el_.setAttribute('aria-expanded', true);
-    this.menu.focus(); // set the focus into the submenu
+    if (this.items && this.items.length > 0) {
+      this.items[0].el().focus(); // set the focus to the title of the submenu
+    }
   }
 
   /**
