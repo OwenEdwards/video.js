@@ -3,6 +3,7 @@
  */
 import Button from '../button.js';
 import Component from '../component.js';
+import * as Fn from '../utils/fn.js';
 import Menu from '../menu/menu.js';
 import MenuButton from '../menu/menu-button.js';
 import MuteToggle from './mute-toggle.js';
@@ -73,7 +74,7 @@ class VolumeMenuButton extends MenuButton {
     playerEl.onfocusin = handleMouseOver;
     playerEl.addEventListener('focus',handleMouseOver,true);
 
-    this.player.on('dispose', function() {
+    player.on('dispose', function() {
       playerEl.onfocusin = null;
       playerEl.removeEventListener('focus',handleMouseDown, true);
     });
