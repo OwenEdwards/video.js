@@ -16,6 +16,7 @@
     videojs.options.flash.swf = '../node_modules/videojs-flash/node_modules/videojs-swf/dist/video-js.swf';
   </script>
 
+  <link href="./focus-visible.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <p style="background-color:#eee; border: 1px solid #777; padding: 10px; font-size: .8em; line-height: 1.5em; font-family: Verdana, sans-serif;">This page shows you how to create, register and initialize a Video.js plugin.</p>
@@ -27,6 +28,7 @@
     <p>Video Playback Not Supported</p>
   </video>
 
+  <script src="../node_modules/focus-visible/dist/focus-visible.min.js"></script>
   <script>
     (function() {
       var vid1, progressed;

@@ -47,6 +47,7 @@
     });
   </script>
 
+  <link href="./focus-visible.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <video id="vid1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264" data-setup=''>
@@ -57,6 +58,7 @@
     -->
   </video>
 
+  <script src="../node_modules/focus-visible/dist/focus-visible.min.js"></script>
   <script>
     var player = videojs("vid1");
     player.controlBar.show();

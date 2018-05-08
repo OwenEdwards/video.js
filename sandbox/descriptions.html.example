@@ -16,6 +16,7 @@
     videojs.options.flash.swf = '../node_modules/videojs-flash/node_modules/videojs-swf/dist/video-js.swf';
   </script>
 
+  <link href="./focus-visible.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -44,5 +45,6 @@
     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
   </video>
 
+  <script src="../node_modules/focus-visible/dist/focus-visible.min.js"></script>
 </body>
 </html>

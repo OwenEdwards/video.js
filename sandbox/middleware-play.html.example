@@ -26,6 +26,7 @@
       background: red;
     }
   </style>
+  <link href="./focus-visible.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -38,6 +39,7 @@
     Terminate the play/pause middleware
   </input>
 
+  <script src="../node_modules/focus-visible/dist/focus-visible.min.js"></script>
   <script>
     var stateToggle = document.getElementById('stateToggle');
 

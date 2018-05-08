@@ -16,6 +16,8 @@
   <script>
     videojs.options.flash.swf = '../node_modules/videojs-flash/node_modules/videojs-swf/dist/video-js.swf';
   </script>
+
+  <link href="./focus-visible.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div style="background-color:#eee; border: 1px solid #777; padding: 10px; margin-bottom: 20px; font-size: .8em; line-height: 1.5em; font-family: Verdana, sans-serif;">
@@ -36,6 +38,8 @@
     <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
   </video>
   <p>This player has the captions-only captionsButton, the subtiles-only subtitlesButton and the subsCapsButton which shows both kinds. Typically you'll use either just the subsCapsButton alone, or one or both of the captionsButton and subtitlesButton.</p>
+
+  <script src="../node_modules/focus-visible/dist/focus-visible.min.js"></script>
   <script>
     var vid = document.getElementById("vid1");
     var player = videojs(vid, {
