@@ -55,6 +55,8 @@ class SeekBar extends Slider {
 
     this.on(this.player_, 'timeupdate', this.update);
     this.on(this.player_, 'ended', this.handleEnded);
+    this.on(this.player_, 'durationchange', this.update);
+    this.on(this.player_.liveTracker, 'liveedgechange', this.update);
 
     // when playing, let's ensure we smoothly update the play progress bar
     // via an interval
@@ -70,7 +72,11 @@ class SeekBar extends Slider {
       }, UPDATE_REFRESH_INTERVAL);
     });
 
-    this.on(this.player_, ['ended', 'pause', 'waiting'], () => {
+    this.on(this.player_, ['ended', 'pause', 'waiting'], (e) => {
+      if (this.player_.liveTracker.isLive() && e.type !== 'ended') {
+        return;
+      }
+
       this.clearInterval(this.updateInterval);
     });
 
@@ -104,7 +110,18 @@ class SeekBar extends Slider {
    * @private
    */
   update_(currentTime, percent) {
-    const duration = this.player_.duration();
+    const liveTracker = this.player_.liveTracker;
+    let duration = this.player_.duration();
+
+    if (liveTracker.isLive()) {
+      duration = this.player_.liveTracker.liveCurrentTime();
+    }
+
+    if (liveTracker.seekableEnd() === Infinity) {
+      this.disable();
+    } else {
+      this.enable();
+    }
 
     // machine readable value of progress bar (percentage complete)
     this.el_.setAttribute('aria-valuenow', (percent * 100).toFixed(2));
@@ -177,7 +194,20 @@ class SeekBar extends Slider {
    *         The percentage of media played so far (0 to 1).
    */
   getPercent() {
-    const percent = this.getCurrentTime_() / this.player_.duration();
+    const currentTime = this.getCurrentTime_();
+    let percent;
+    const liveTracker = this.player_.liveTracker;
+
+    if (liveTracker.isLive()) {
+      percent = (currentTime - liveTracker.seekableStart()) / liveTracker.liveWindow();
+
+      // prevent the percent from changing at the live edge
+      if (liveTracker.atLiveEdge()) {
+        percent = 1;
+      }
+    } else {
+      percent = currentTime / this.player_.duration();
+    }
 
     return percent >= 1 ? 1 : (percent || 0);
   }
@@ -217,12 +247,40 @@ class SeekBar extends Slider {
     if (!Dom.isSingleLeftClick(event)) {
       return;
     }
+    let newTime;
+    const distance = this.calculateDistance(event);
+    const liveTracker = this.player_.liveTracker;
 
-    let newTime = this.calculateDistance(event) * this.player_.duration();
+    if (!liveTracker.isLive()) {
+      newTime = distance * this.player_.duration();
 
-    // Don't let video end while scrubbing.
-    if (newTime === this.player_.duration()) {
-      newTime = newTime - 0.1;
+      // Don't let video end while scrubbing.
+      if (newTime === this.player_.duration()) {
+        newTime = newTime - 0.1;
+      }
+    } else {
+      const seekableStart = liveTracker.seekableStart();
+      const seekableEnd = liveTracker.liveCurrentTime();
+
+      newTime = seekableStart + (distance * liveTracker.liveWindow());
+
+      // Don't let video end while scrubbing.
+      if (newTime >= seekableEnd) {
+        newTime = seekableEnd;
+      }
+
+      // Compensate for precision differences so that currentTime is not less
+      // than seekable start
+      if (newTime <= seekableStart) {
+        newTime = seekableStart + 0.1;
+      }
+
+      // On android seekableEnd can be Infinity sometimes,
+      // this will cause newTime to be Infinity, which is
+      // not a valid currentTime.
+      if (newTime === Infinity) {
+        return;
+      }
     }
 
     // Set new time (tell player to seek to new time)
