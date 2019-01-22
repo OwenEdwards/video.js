@@ -2812,9 +2812,6 @@ class Player extends Component {
       playPauseKey = keydownEvent => (keycode.isEventKey(keydownEvent, 'k') || keycode.isEventKey(keydownEvent, 'Space'))
     } = hotkeys;
 
-    // Trigger the ControlBar equivalent for each key, if possible
-    const cb = this.controlBar;
-
     if (fullscreenKey.call(this, event)) {
 
       event.preventDefault();
@@ -2837,17 +2834,9 @@ class Player extends Component {
 
       event.preventDefault();
 
-      const playToggle = cb && cb.playToggle;
+      const PlayToggle = Component.getComponent('PlayToggle');
 
-      // Allow "toggle play/pause" hotkey even when no control bar is present
-
-      if (playToggle && playToggle.handleClick) {
-        playToggle.handleClick();
-      } else if (this.paused()) {
-        this.play();
-      } else {
-        this.pause();
-      }
+      PlayToggle.prototype.handleClick.call(this);
     }
   }
 
