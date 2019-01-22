@@ -2803,26 +2803,14 @@ class Player extends Component {
    *        The `keydown` event that caused this function to be called.
    */
   handleHotkeys(event) {
-    const hotkeys = this.options_.userActions ? this.options_.userActions.hotkeys : null;
-    let fullscreenKey;
-    let muteKey;
-    let playPauseKey;
+    const hotkeys = this.options_.userActions ? this.options_.userActions.hotkeys : {};
 
-    if (hotkeys) {
-      fullscreenKey = hotkeys.fullscreenKey;
-      muteKey = hotkeys.muteKey;
-      playPauseKey = hotkeys.playPauseKey;
-    }
-
-    if (typeof fullscreenKey !== 'function') {
-      fullscreenKey = keydownEvent => keycode.isEventKey(keydownEvent, 'f');
-    }
-    if (typeof muteKey !== 'function') {
-      muteKey = keydownEvent => keycode.isEventKey(keydownEvent, 'm');
-    }
-    if (typeof playPauseKey !== 'function') {
-      playPauseKey = keydownEvent => (keycode.isEventKey(keydownEvent, 'k') || keycode.isEventKey(keydownEvent, 'Space'));
-    }
+    // set fullscreenKey, muteKey, playPauseKey from `hotkeys`, use defaults if not set
+    const {
+      fullscreenKey = keydownEvent => keycode.isEventKey(keydownEvent, 'f'),
+      muteKey = keydownEvent => keycode.isEventKey(keydownEvent, 'm'),
+      playPauseKey = keydownEvent => (keycode.isEventKey(keydownEvent, 'k') || keycode.isEventKey(keydownEvent, 'Space'))
+    } = hotkeys;
 
     // Trigger the ControlBar equivalent for each key, if possible
     const cb = this.controlBar;
