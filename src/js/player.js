@@ -2819,14 +2819,10 @@ class Player extends Component {
 
       event.preventDefault();
 
-      const fullscreenToggle = cb && cb.fullscreenToggle;
+      const FSToggle = Component.getComponent('FullscreenToggle');
 
-      // TODO: make sure that this hotkey doesn't "toggle fullscreen" if
-      //  fullscreen is disabled. For now, ONLY allow fullscreen if the
-      //  fullscreen button is present in the ControlBar.
-
-      if (fullscreenToggle && fullscreenToggle.handleClick) {
-        fullscreenToggle.handleClick();
+      if (document[FullscreenApi.fullscreenEnabled] !== false) {
+        FSToggle.prototype.handleClick.call(this);
       }
 
     } else if (muteKey.call(this, event)) {
