@@ -2829,16 +2829,9 @@ class Player extends Component {
 
       event.preventDefault();
 
-      const volumePanel = cb && cb.volumePanel;
-      const muteToggle = (cb && cb.muteToggle) || (volumePanel && volumePanel.muteToggle);
+      const MuteToggle = Component.getComponent('MuteToggle');
 
-      // Allow "toggle mute" hotkey even when no control bar is present
-
-      if (muteToggle && muteToggle.handleClick) {
-        muteToggle.handleClick();
-      } else {
-        this.muted(this.muted() ? false : true);
-      }
+      MuteToggle.prototype.handleClick.call(this);
 
     } else if (playPauseKey.call(this, event)) {
 
