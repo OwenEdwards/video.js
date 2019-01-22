@@ -521,6 +521,9 @@ class Player extends Component {
 
     this.one('play', this.listenForUserActivity_);
 
+    this.on('focus', this.handleFocus);
+    this.on('blur', this.handleBlur);
+
     if (FullscreenApi.fullscreenchange) {
       this.on(FullscreenApi.fullscreenchange, this.handleFullscreenChange_);
 
@@ -2749,6 +2752,8 @@ class Player extends Component {
    * @listens focus
    */
   handleFocus(event) {
+    // call off first to make sure we don't keep adding keydown handlers
+    Events.off(document, 'keydown', Fn.bind(this, this.handleKeyPress));
     Events.on(document, 'keydown', Fn.bind(this, this.handleKeyPress));
   }
 
