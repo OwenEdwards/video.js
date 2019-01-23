@@ -2782,17 +2782,18 @@ class Player extends Component {
    * @listens keydown
    */
   handleKeyPress(event) {
-    if (!this.options_.userActions ||
-        this.options_.userActions.hotkeys === false) {
-      this.handleHotkeys(event);
-    } else if (typeof this.options_.userActions.hotkeys === 'function') {
 
-      this.options_.userActions.hotkeys.call(this, event);
+    if (this.options_.userActions && this.options_.userActions.hotkeys && (this.options_.userActions.hotkeys !== false)) {
 
-    } else {
+      if (typeof this.options_.userActions.hotkeys === 'function') {
 
-      this.handleHotkeys(event);
+        this.options_.userActions.hotkeys.call(this, event);
 
+      } else {
+
+        this.handleHotkeys(event);
+
+      }
     }
   }
 
