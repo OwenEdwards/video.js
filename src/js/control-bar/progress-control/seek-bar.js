@@ -155,8 +155,8 @@ class SeekBar extends Slider {
           'aria-valuetext',
           this.localize(
             'progress bar timing: currentTime={1} duration={2}',
-            [formatTime(currentTime, duration),
-              formatTime(duration, duration)],
+            [this.readableTime(currentTime, duration),
+              this.readableTime(duration, duration)],
             '{1} of {2}'
           )
         );
@@ -172,6 +172,68 @@ class SeekBar extends Slider {
     });
 
     return percent;
+  }
+
+  /**
+   * Convert time into a human-readable format.
+   *
+   * @param    {number} seconds
+   *           Number of seconds to be turned into a string
+   *
+   * @param    {number} guide
+   *           Number (in seconds) to model the string after
+   *
+   * @return   {string}
+   *           Time formatted according to this locale
+   *
+   * @private
+   */
+  readableTime(seconds, guide = seconds) {
+    let ft = formatTime(seconds, guide);
+
+    // Check that ft is n:nn:nn or n:nn format, otherwise just return ft
+    //  (so that formatTime handles special cases of seconds, e.g. NaN)
+    if (!ft.match(/^\d+(:\d+){1,2}$/)) {
+      return ft;
+    }
+
+    // TODO: None of the text formats correctly handle the "s" at the end of "hours",
+    //  "minutes", and "seconds", or localizing it.
+    //  See, for example:
+    //  https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals
+
+    const hms = ft.split(':');
+
+    if (hms.length === 3) {
+      const hrs = Number.parseInt(hms[0], 10);
+      const mins = Number.parseInt(hms[1], 10);
+      const secs = Number.parseInt(hms[2], 10);
+
+      ft = this.localize(
+        'hours minutes seconds format: hours={1} minutes={2} seconds={3}',
+        [hrs, mins, secs],
+        '{1} hours, {2} minutes and {3} seconds'
+      );
+    } else if (hms.length === 2) {
+      const mins = Number.parseInt(hms[0], 10);
+      const secs = Number.parseInt(hms[1], 10);
+
+      if (mins > 0) {
+        ft = this.localize(
+          'minutes seconds format: minutes={1} seconds={2}',
+          [mins, secs],
+          '{1} minutes and {2} seconds'
+        );
+      } else {
+        ft = this.localize(
+          'seconds format: seconds={1}',
+          [secs],
+          '{1} seconds'
+        );
+      }
+    }
+
+    return ft;
   }
 
   /**

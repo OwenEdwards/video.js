@@ -13,18 +13,25 @@ This default value is hardcoded as a default to the localize method in the SeekB
 ## Status of translations
 
 <!-- START langtable -->
+
 | Language file           | Missing translations                                                                |
 | ----------------------- | ----------------------------------------------------------------------------------- |
-| ar.json (missing 3)     | progress bar timing: currentTime={1} duration={2}                                   |
+| ar.json (missing 6)     | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| ba.json (missing 63)    | Audio Player                                                                        |
+| ba.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -81,13 +88,16 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| bg.json (missing 63)    | Audio Player                                                                        |
+| bg.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -144,13 +154,16 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| ca.json (missing 63)    | Audio Player                                                                        |
+| ca.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -207,21 +220,30 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| cs.json (missing 4)     | Seek to live, currently behind live                                                 |
+| cs.json (missing 7)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| cy.json (missing 4)     | Seek to live, currently behind live                                                 |
+| cy.json (missing 7)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| da.json (missing 63)    | Audio Player                                                                        |
+| da.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -278,15 +300,21 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| de.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| de.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| el.json (missing 49)    | Audio Player                                                                        |
+| el.json (missing 52)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Volume Level                                                                        |
 |                         | captions settings                                                                   |
 |                         | subtitles settings                                                                  |
@@ -329,16 +357,24 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| es.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| es.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| fa.json (Complete)      |                                                                                     |
-| fi.json (missing 63)    | Audio Player                                                                        |
+| fa.json (missing 3)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+| fi.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -395,27 +431,42 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| fr.json (missing 5)     | Seek to live, currently behind live                                                 |
+| fr.json (missing 8)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| gd.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| gd.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| gl.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| gl.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| he.json (missing 5)     | Seek to live, currently behind live                                                 |
+| he.json (missing 8)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| hr.json (missing 63)    | Audio Player                                                                        |
+| hr.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -472,13 +523,16 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| hu.json (missing 63)    | Audio Player                                                                        |
+| hu.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -535,13 +589,16 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| it.json (missing 63)    | Audio Player                                                                        |
+| it.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -598,13 +655,16 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| ja.json (missing 63)    | Audio Player                                                                        |
+| ja.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -661,13 +721,16 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| ko.json (missing 63)    | Audio Player                                                                        |
+| ko.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -724,24 +787,39 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| nb.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| nb.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| nl.json (missing 5)     | Seek to live, currently behind live                                                 |
+| nl.json (missing 8)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| nn.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| nn.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| oc.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| oc.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| pl.json (missing 55)    | Audio Player                                                                        |
+| pl.json (missing 58)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -790,16 +868,22 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| pt-BR.json (missing 4)  | Seek to live, currently behind live                                                 |
+| pt-BR.json (missing 7)  | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| pt-PT.json (missing 48) | Audio Player                                                                        |
+| pt-PT.json (missing 51) | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Volume Level                                                                        |
 |                         | captions settings                                                                   |
 |                         | subtitles settings                                                                  |
@@ -842,21 +926,30 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| ru.json (missing 4)     | Seek to live, currently behind live                                                 |
+| ru.json (missing 7)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| sk.json (missing 4)     | Seek to live, currently behind live                                                 |
+| sk.json (missing 7)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| sr.json (missing 63)    | Audio Player                                                                        |
+| sr.json (missing 66)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Replay                                                                              |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Descriptions                                                                        |
 |                         | descriptions off                                                                    |
 |                         | Audio Track                                                                         |
@@ -913,14 +1006,20 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| sv.json (missing 2)     | Exit Picture-in-Picture                                                             |
+| sv.json (missing 5)     | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| tr.json (missing 13)    | Audio Player                                                                        |
+| tr.json (missing 16)    | Audio Player                                                                        |
 |                         | Video Player                                                                        |
 |                         | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
 |                         | Progress Bar                                                                        |
 |                         | progress bar timing: currentTime={1} duration={2}                                   |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Volume Level                                                                        |
 |                         | Reset                                                                               |
 |                         | restore all settings to the default values                                          |
@@ -928,17 +1027,30 @@ This default value is hardcoded as a default to the localize method in the SeekB
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| uk.json (missing 4)     | Seek to live, currently behind live                                                 |
+| uk.json (missing 7)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| vi.json (missing 5)     | Seek to live, currently behind live                                                 |
+| vi.json (missing 8)     | Seek to live, currently behind live                                                 |
 |                         | Seek to live, currently playing live                                                |
+|                         | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
 |                         | {1} is loading.                                                                     |
 |                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| zh-CN.json (missing 2)  | Exit Picture-in-Picture                                                             |
+| zh-CN.json (missing 5)  | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
-| zh-TW.json (missing 2)  | Exit Picture-in-Picture                                                             |
+| zh-TW.json (missing 5)  | hours minutes seconds format: hours={1} minutes={2} seconds={3}                     |
+|                         | minutes seconds format: minutes={1} seconds={2}                                     |
+|                         | seconds format: seconds={1}                                                         |
+|                         | Exit Picture-in-Picture                                                             |
 |                         | Picture-in-Picture                                                                  |
+
 <!-- END langtable -->
