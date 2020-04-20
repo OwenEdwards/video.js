@@ -153,6 +153,7 @@
   },
   "vjsstandard": {
     "ignore": [
+      "build/temp",
       "dist",
       "docs",
       "sandbox",
